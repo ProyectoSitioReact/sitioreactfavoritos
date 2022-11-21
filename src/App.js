@@ -40,7 +40,7 @@ function App() {
 
   return (
     <center><div style={{width:"350px", background:"yellow", padding:"10px"}}>
-      <center><h1>Tabla Persona</h1></center>
+      <center><h1>Tabla Personas</h1></center>
       <AppForm {...{idActual, setIdActual, fnRead}} />
       {
         docsBD.map((p) => <p key={p.id}> {p.nombre} </p> )
