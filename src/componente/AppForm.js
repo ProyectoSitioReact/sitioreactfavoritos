@@ -6,7 +6,7 @@ const AppForm = (props) => {
     ///////////////////////////////////////////////////////////////////////
     ////////// CREAR - fnCrear - Guardar //////////////////////////////////
     ///////////////////////////////////////////////////////////////////////
-    const camposRegistro = {Url:"", Nombre:"", Descripción:""};
+    const camposRegistro = {Url:"", Nombre:"", Descripcion:""};
     const [objeto, setObjeto] = useState(camposRegistro);
 
     const handleStatusChange = (e) => {      //Manejar cambios en form
@@ -51,15 +51,15 @@ const AppForm = (props) => {
         <div style={{background:"black", padding:"10px", margin:"10px"}}>
             <center><h3>Ingresa:</h3></center>
             <form onSubmit={handleSubmit}>
-                <center><input type="text" name='nombre' placeholder='Nombres...' 
+                <center><input type="text" name='Url' placeholder='Url...' 
                     onChange={handleStatusChange} value={objeto.Url}
                 /></center>
 
-                <center><input type="text" name='edad' placeholder='Edad...' 
+                <center><input type="text" name='Nombre' placeholder='Nombre...' 
                     onChange={handleStatusChange} value={objeto.Nombre}
                 /></center>
 
-                <center><input type="text" name='genero' placeholder='Genero...' 
+                <center><input type="text" name='Descripcion' placeholder='Descripción...' 
                     onChange={handleStatusChange} value={objeto.Descripción}
                 /></center>
                 <br></br>
