@@ -6,7 +6,7 @@ const AppForm = (props) => {
     ///////////////////////////////////////////////////////////////////////
     ////////// CREAR - fnCrear - Guardar //////////////////////////////////
     ///////////////////////////////////////////////////////////////////////
-    const camposRegistro = {nombre:"", edad:"", genero:""};
+    const camposRegistro = {Url:"", Nombre:"", Descripción:""};
     const [objeto, setObjeto] = useState(camposRegistro);
 
     const handleStatusChange = (e) => {      //Manejar cambios en form
@@ -21,7 +21,7 @@ const AppForm = (props) => {
         try {
             if(props.idActual === ""){
                 if(validarForm()){
-                    addDoc(collection(db, 'persona'), objeto);
+                    addDoc(collection(db, 'favoritos'), objeto);
                     console.log("Se guardo registro en BD...");
                 }else{
                     console.log("NO se guardo...");
@@ -36,8 +36,8 @@ const AppForm = (props) => {
     };
     
     const validarForm = () => {
-         if(objeto.nombre === ""){
-            alert("Escriba nombre...");
+         if(objeto.Url === ""){
+            alert("Escriba Url...");
             return false;
          }
          return true;
@@ -52,15 +52,15 @@ const AppForm = (props) => {
             <center><h3>Ingresa:</h3></center>
             <form onSubmit={handleSubmit}>
                 <center><input type="text" name='nombre' placeholder='Nombres...' 
-                    onChange={handleStatusChange} value={objeto.nombre}
+                    onChange={handleStatusChange} value={objeto.Url}
                 /></center>
 
                 <center><input type="text" name='edad' placeholder='Edad...' 
-                    onChange={handleStatusChange} value={objeto.edad}
+                    onChange={handleStatusChange} value={objeto.Nombre}
                 /></center>
 
                 <center><input type="text" name='genero' placeholder='Genero...' 
-                    onChange={handleStatusChange} value={objeto.genero}
+                    onChange={handleStatusChange} value={objeto.Descripción}
                 /></center>
                 <br></br>
                 <center><button>

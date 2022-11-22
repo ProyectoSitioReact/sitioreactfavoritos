@@ -11,7 +11,7 @@ function App() {
   //console.log(docsBD);
 
   const fnRead = () => {
-    const xColeccionConQuery = query(collection(db, "persona"));
+    const xColeccionConQuery = query(collection(db, "favoritos"));
     //const xColeccionConQuery = query(collection(db, "persona"), where("nombre", "!=", ""));
     const unsubcribe = onSnapshot(xColeccionConQuery, (xDatosBD) => {
       const xDoc = [];
@@ -40,10 +40,10 @@ function App() {
 
   return (
     <center><div style={{width:"350px", background:"yellow", padding:"10px"}}>
-      <center><h1>Tabla Persona</h1></center>
+      <center><h1>Tabla Favoritos</h1></center>
       <AppForm {...{idActual, setIdActual, fnRead}} />
       {
-        docsBD.map((p) => <p key={p.id}> {p.nombre} </p> )
+        docsBD.map((p) => <p key={p.id}> {p.Url} </p> )
       }      
     </div>
     </center>
