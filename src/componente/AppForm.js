@@ -60,7 +60,7 @@ const AppForm = (props) => {
                 /></center>
 
                 <center><input type="text" name='Descripcion' placeholder='Descripción...' 
-                    onChange={handleStatusChange} value={objeto.Descripción}
+                    onChange={handleStatusChange} value={objeto.Descripcion}
                 /></center>
                 <br></br>
                 <center><button>
